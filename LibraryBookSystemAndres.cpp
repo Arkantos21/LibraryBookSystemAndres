@@ -61,7 +61,7 @@ public:
 };
 
 int main() {
-    Book books[8]; // Array to store 8 Book objects
+    Book books[8]; // Book list
 
     // Sets up the list of books in the system
     books[0].setBookDetails("The Fellowship of the Ring", "J.R.R. Tolkien", "101", true, "2020-01-01");
