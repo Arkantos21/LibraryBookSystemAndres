@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+// [Commit 1] Book class: stores title, author, ISBN, availability, and added date
 class Book {
 private:
     string title;
