@@ -51,7 +51,23 @@ public:
     bool isAvailable() {
         return available;
     }
+
+    string getTitle() {
+        return title;
+    }
 };
+
+void sortBooksByTitle(Book books[], int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        for (int j = 0; j < size - i - 1; ++j) {
+            if (books[j].getTitle() > books[j + 1].getTitle()) {
+                Book temp = books[j];
+                books[j] = books[j + 1];
+                books[j + 1] = temp;
+            }
+        }
+    }
+}
 
 int main() {
     Book books[8];
@@ -65,10 +81,11 @@ int main() {
     books[6].setBookDetails("NULL", " ", "107", false, "N/A");
     books[7].setBookDetails("The Neverending Story", "", "ISBN", true, "abc");
 
-    cout << "Incorrect Books:\n\n";
-    books[2].displayBookDetails();
-    books[6].displayBookDetails();
-    books[7].displayBookDetails();
+    cout << "\nSorted Books by Title:\n\n";
+    sortBooksByTitle(books, 8);
+    for (int i = 0; i < 8; ++i) {
+        books[i].displayBookDetails();
+    }
 
     string inputISBN;
     while (true) {
